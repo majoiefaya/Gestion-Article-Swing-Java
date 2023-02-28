@@ -1,0 +1,95 @@
+PARTIE1
+
+1.Le Programme se trouve dans le dossier ContenuDuTp1-->CodeSource-->Partie1
+
+
+
+2.Il s'agit du pattern Commande
+
+Roles de chaque classes:
+
+*La classe Commande : cette classe définit une interface commune pour toutes les commandes. 
+
+
+
+Elle contient généralement une méthode d'exécution abstraite qui doit être implémentée par chaque commande concrète.
+
+
+
+*Les classes Commandes concrètes : ce sont des classes qui implémentent l'interface Commande et représentent des commandes spécifiques.
+
+
+
+*La classe Receveur : cette classe contient les méthodes qui effectuent les opérations réelles sur les objets cibles.
+
+
+
+*La classe Invocateur : cette classe est responsable de la création et de l'exécution des commandes. 
+
+
+
+
+PARTIE2
+
+1) Le Diagramme de classe ce Trouve Dans ContenuDuTp1
+
+J ai proposé deux Type d implementations:
+
+
+-En ligne de Commande :ContenuDuTp1-->CodeSource-->Partie2EnCmd
+
+-En Interface Graphique Swing :ContenuDuTp1-->CodeSource-->Partie2EnSwing
+
+
+
+Pour ces 2 formes j ai utilisé le design Pattern Observer
+
+
+
+-Role de Chaque Classe:
+
+
+**Subject: La classe Article est le sujet de l'observation. 
+
+Elle a une liste d'observateurs qui est mise à jour lorsqu'un changement se produit dans l'état de l'article 
+
+(par exemple, lorsque le prix est modifié). Les méthodes attach(), detach() et notifyObservers() 
+
+sont utilisées pour gérer la liste d'observateurs et mettre à jour leur état.
+
+
+
+
+**Observer**: L'interface Observer définit la méthode update() qui est appelée par le
+
+ sujet lorsqu'un changement se produit dans l'état de l'article. La classe Client implémente cette interface
+
+ et met à jour l'état de la commande lorsque le prix de l'article est modifié.
+
+
+
+**ConcreteObserver**: La classe Client est un observateur concret qui implémente l'interface Observer.
+
+ Elle stocke l'état de la commande et met à jour son état en fonction des notifications du sujet.
+
+
+
+**ConcreteSubject**: Dans cet exemple, la classe Article est également un sujet concret car elle étend la classe abstraite Subject. 
+
+Elle a des propriétés spécifiques aux articles (nom, marque, prix, etc.) et implémente les méthodes abstraites de la classe Subject.
+
+
+
+**Main**: La classe Main est le point d'entrée de l'application. Elle crée un objet Article et plusieurs objets Client qui observent l'état de l'article. 
+
+Elle met également à jour le prix de l'article et vérifie que les observateurs sont notifiés et mis à jour correctement.
+
+
+
+2)L implementation demandée se trouve dans le dossier :
+
+
+-En ligne de Commande :ContenuDuTp1-->CodeSource-->Partie2EnCmd
+
+
+-En Interface Graphique Swing :ContenuDuTp1-->CodeSource-->Partie2EnSwing
